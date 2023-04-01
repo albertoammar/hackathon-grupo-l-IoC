@@ -19,6 +19,10 @@ provider "aws" {
   profile = "hackathon"
 }
 
+variable "app_name" {
+    type        = string
+    default     = "grupo-l-back"
+}
 # Para criar tfstate no s3
 #data "aws_caller_identity" "current" {}
 #
