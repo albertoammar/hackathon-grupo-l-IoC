@@ -37,10 +37,6 @@ resource "aws_ecs_task_definition" "my_first_task" {
           "name": "DB_PASSWORD",
           "value": "123123aa"
         },
-{
-          "name": "DB_PASSWORD2",
-          "value": "123123aa"
-        },
         {
           "name": "DB_NAME",
           "value": "db"
@@ -170,7 +166,9 @@ resource "aws_lb_target_group" "target_group" {
   health_check {
     matcher = "200,301,302"
     path = "/"
-    healthy_threshold = 8
+    healthy_threshold = 10
+    interval = 300
+    port = 8080
   }
 }
 
